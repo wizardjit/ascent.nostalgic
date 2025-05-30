@@ -21,6 +21,110 @@ local watermarks = {}
 local loaders = {}
 --
 local utility = {}
+
+-- // themes table
+local themes = {
+     Fatality = {
+        Outline = "0f0f28",
+        Accent = "f00f50",
+        LightText = "c8c8ff",
+        DarkText = "afafaf",
+        LightContrast = "231946",
+        CursorOutline = "0f0f28",
+        DarkContrast = "191432",
+        TextBorder = "0a0a0a",
+        Inline = "322850"
+    },
+    Neverlose = {
+        Outline = "000005",
+        Accent = "00b4f0",
+        LightText = "ffffff",
+        DarkText = "afafaf",
+        LightContrast = "000f1e",
+        CursorOutline = "0f0f28",
+        DarkContrast = "050514",
+        TextBorder = "0a0a0a",
+        Inline = "0a1e28"
+    },
+    Aimware = {
+        Outline = "000005",
+        Accent = "c82828",
+        LightText = "e8e8e8",
+        DarkText = "afafaf",
+        LightContrast = "2b2b2b",
+        CursorOutline = "191919",
+        DarkContrast = "191919",
+        TextBorder = "0a0a0a",
+        Inline = "373737"
+    },
+    Youtube = {
+        Outline = "000000",
+        Accent = "ff0000",
+        LightText = "f1f1f1",
+        DarkText = "aaaaaa",
+        LightContrast = "232323",
+        CursorOutline = "121212",
+        DarkContrast = "0f0f0f",
+        TextBorder = "121212",
+        Inline = "393939"
+    },
+    Gamesense = {
+        Outline = "000000",
+        Accent = "a7d94d",
+        LightText = "ffffff",
+        DarkText = "afafaf",
+        LightContrast = "171717",
+        CursorOutline = "141414",
+        DarkContrast = "0c0c0c",
+        TextBorder = "141414",
+        Inline = "282828"
+    },
+    Onetap = {
+        Outline = "000000",
+        Accent = "dda85d",
+        LightText = "d6d9e0",
+        DarkText = "afafaf",
+        LightContrast = "2c3037",
+        CursorOutline = "000000",
+        DarkContrast = "1f2125",
+        TextBorder = "000000",
+        Inline = "4e5158"
+    },
+    Entropy = {
+        Outline = "0a0a0a",
+        Accent = "81bbe9",
+        LightText = "dcdcdc",
+        DarkText = "afafaf",
+        LightContrast = "3d3a43",
+        CursorOutline = "000000",
+        DarkContrast = "302f37",
+        TextBorder = "000000",
+        Inline = "4c4a52"
+    },
+    Interwebz = {
+        Outline = "1a1a1a",
+        Accent = "c9654b",
+        LightText = "fcfcfc",
+        DarkText = "a8a8a8",
+        LightContrast = "291f38",
+        CursorOutline = "1a1a1a",
+        DarkContrast = "1f162b",
+        TextBorder = "000000",
+        Inline = "40364f"
+    }
+}
+
+local function HexToColor3(hex)
+    hex = hex:lower()
+    local r = tonumber(hex:sub(1,2), 16)
+    local g = tonumber(hex:sub(3,4), 16)
+    local b = tonumber(hex:sub(5,6), 16)
+    return Color3.fromRGB(r,g,b)
+end
+
+
+
+
 --
 local check_exploit = (syn and "Synapse") or (KRNL_LOADED and "Krnl") or (isourclosure and "ScriptWare") or nil
 local plrs = game:GetService("Players")
