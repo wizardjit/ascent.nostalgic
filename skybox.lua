@@ -1,3 +1,4 @@
+-- yes this isn't mine
 local skyboxes = {
   ["Default"] = {
     SkyboxBk = "rbxassetid://91458024",
@@ -96,3 +97,5 @@ local skyboxes = {
     SkyboxUp = "rbxassetid://149397702",
   },
 }
+
+return skyboxes
