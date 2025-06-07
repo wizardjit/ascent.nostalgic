@@ -1,5 +1,4 @@
 -- // Temp UI
--- // @ Idoine
 
 repeat
     task.wait()
@@ -563,9 +562,8 @@ repeat
                         newButton.text.Text = name
  
                         for i, v in next, library.tabbuttons do
-                        v.ImageColor3 = Color3.fromRGB(255, 255, 255)
+                        v.ImageColor3 = Color3.fromRGB(25, 25, 25)
                         end
-                        
  
                         newButton.MouseButton1Click:Connect(function()
                         for i,v in next, library.tabs do v.Visible = v == newTab end
@@ -2409,8 +2407,4 @@ repeat
                     library.options["config_box"].refresh(tbl)
                 end      
             end)()                         
-
-
-
-            
             return library
